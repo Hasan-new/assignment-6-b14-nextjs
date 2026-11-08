@@ -7,14 +7,12 @@ const getUsers = async () => {
 }
 const TheLibrary = async () => {
     const users = await getUsers();
-    // const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
-    // const users = await res.json();
-    // console.log(users);
+    
     return (
         <div>
             <h2>Users: {users.length}</h2>
             
-                <div>
+                <div className="grid grid-cols-3 gap-4">
                     {users.map((user) => (
                         <UserCard key={user.id} user={user} />
                     ))}
